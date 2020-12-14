@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  frontend:
+    image: 'node:14'
+    volumes:
+      - ./frontend:/frontend
+    working_dir: /frontend/
+    networks:
+      - back-tier
+    
+
+networks:
+    back-tier:
+        driver: bridge
