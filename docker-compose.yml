@@ -8,22 +8,14 @@ services:
     networks:
       - back-tier
 
-
   backend:
     image: 'node:14'
-    command: bash -c "yarn && yarn start"
     volumes:
       - ./backend:/backend
     working_dir: /backend/
-    environment:
-      - NODE_ENV=development
-      - PORT=8000
-    ports:
-      - 8000:8000
     networks:
       - back-tier
     restart: always
-
 
   nginx:
     image: nginx:1.18

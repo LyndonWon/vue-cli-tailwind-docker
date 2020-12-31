@@ -8,5 +8,9 @@ services:
       - 3000:3000
 
   backend:
+    command: bash -c "yarn && yarn start"
     environment:
+      - PORT=8000
       - NODE_ENV=production
+    ports:
+      - 8000:8000
