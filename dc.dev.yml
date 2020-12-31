@@ -6,3 +6,6 @@ services:
       - NODE_ENV=development
     ports:
       - 3000:3000
+
+  backend:
+    command: bash -c "yarn && yarn run start:dev"
